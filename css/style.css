@@ -12,6 +12,25 @@ a {
 /* ------------------
        header section 
  ----------------------- */
+.mobile-nav {
+  display: none;
+}
+.fas.fa-bars.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: left;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+.hide-it {
+  display: none;
+}
+#check {
+  display: none;
+}
+
 .header-section {
   background-color: blue;
   width: 100%;
@@ -40,12 +59,18 @@ a {
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
-
 .links a {
   color: white;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 3px;
+}
+.active,
+.links a:hover {
+  background-color: #1b9bff;
+  transition: 0.5s;
 }
 .login-button {
   width: 123px;
@@ -240,5 +265,227 @@ a {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  .hide-it {
+    display: block;
+  }
+  .header-section {
+    height: 740px;
+  }
+  .fas.fa-bars.checkbtn {
+    display: block;
+  }
+  .links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 100px;
+    text-align: center;
+    flex-direction: column;
+    left: -100%;
+    transition: all 0.5s;
+  }
+  .links li {
+    margin-top: 50px;
+    font-size: 48px;
+    line-height: 60px;
+  }
+  #check:checked ~ .links {
+    left: 0;
+  }
+  .active,
+  .links a:hover {
+    background: none;
+    color: #0082e6;
+  }
+  .home-section {
+    flex-direction: column;
+    height: 695px;
+  }
+  .section-title {
+    font-size: 36px;
+    line-height: 50px;
+    color: white;
+  }
+  .banner {
+    margin-top: 25px;
+    width: 329px;
+    height: 259px;
+  }
+  .players {
+    grid-template-columns: 1fr;
+    grid-row-gap: 23px;
+    margin-top: 70px;
+  }
+  .highlights {
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+  .highlight-name {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .high-leftside {
+    width: 329px;
+    height: 299px;
+    margin-right: 0;
+    margin-bottom: 29px;
+  }
+  .match-img {
+    width: 328px;
+    height: 248px;
+    margin-bottom: 80px;
+  }
+  .main-footer {
+    width: 100%;
+    height: 200px;
+  }
+  .foot-container {
+    width: 280px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 27%;
+  }
+  .f-logo {
+    width: 320px;
+    height: 80px;
+  }
+  .fab {
+    width: 25px;
+    height: 25px;
+    text-decoration: none;
+    color: grey;
+  }
+}
+
+@media only screen and (max-width: 952px) and (min-width: 689px) {
+  .hide-it {
+    display: block;
+  }
+  .fas.fa-bars.checkbtn {
+    display: block;
+  }
+  .links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 100px;
+    left: 0;
+    text-align: center;
+    flex-direction: column;
+    left: -100%;
+    transition: all 0.5s;
+  }
+  .links li {
+    margin-top: 50px;
+    font-size: 48px;
+    line-height: 60px;
+  }
+  #check:checked ~ .links {
+    left: 0;
+  }
+  .active,
+  .links a:hover {
+    background: none;
+    color: #0082e6;
+  }
+  .header-section {
+    background-color: blue;
+    width: 100%;
+    height: 747px;
+  }
+  .home-section {
+    flex-direction: column;
+  }
+  .section-title {
+    font-size: 40px;
+    line-height: 55px;
+    color: white;
+  }
+  .banner {
+    margin-top: 30px;
+    width: 349px;
+    height: 279px;
+  }
+  .players {
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 17px;
+    grid-column-gap: 17px;
+    margin-top: 70px;
+  }
+  .players:nth-child(1) {
+    margin-left: 80px;
+  }
+  .players:nth-child(3) {
+    margin-left: 80px;
+  }
+  .players:nth-child(5) {
+    margin-left: 80px;
+  }
+  .players:nth-child(7) {
+    margin-left: 80px;
+  }
+  .players:nth-child(9) {
+    margin-left: 80px;
+  }
+  .players:nth-child(11) {
+    margin-left: 80px;
+  }
+  .highlights {
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 0;
+  }
+  .highlight-name {
+    font-size: 36px;
+    line-height: 46px;
+  }
+  .high-leftside {
+    width: 349px;
+    height: 319px;
+    margin-right: 0;
+    margin-bottom: 59px;
+  }
+  .match-img {
+    width: 348px;
+    height: 268px;
+    margin-bottom: 80px;
+  }
+  .main-footer {
+    width: 100%;
+    height: 200px;
+  }
+  .foot-container {
+    width: 280px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 32%;
+  }
+  .f-logo {
+    width: 213px;
+    height: 54px;
+  }
+  .fab {
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    color: grey;
+  }
+  .copy {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
   }
 }
