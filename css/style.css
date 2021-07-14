@@ -4,6 +4,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  --nav-link-load: 500ms;
 }
 a {
   text-decoration: none;
@@ -33,6 +34,11 @@ a {
 .links li {
   list-style: none;
   margin-right: 36px;
+  animation-name: nav-load;
+  animation-duration: var(--nav-link-load);
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
 
 .links a {
@@ -223,4 +229,16 @@ a {
   text-align: center;
   font-weight: 400;
   font-size: 18px;
+}
+
+@keyframes nav-load {
+  0% {
+    transform: translateY(-1000%);
+  }
+  90% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
